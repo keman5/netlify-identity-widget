@@ -41,9 +41,9 @@ export default class UserForm extends Component {
                 placeholder={
                   namePlaceholder ? namePlaceholder : t("form_name_label")
                 }
+                oninput={this.handleInput}
                 autocapitalize="off"
                 required
-                oninput={this.handleInput}
               />
               <div className="inputFieldIcon inputFieldName" />
             </label>
@@ -58,10 +58,10 @@ export default class UserForm extends Component {
                 type="email"
                 name="email"
                 value={email}
-                placeholder={t("form_email_placeholder")}
                 autocapitalize="off"
-                required
+                placeholder={t("form_email_placeholder")}
                 oninput={this.handleInput}
+                required
               />
               <div className="inputFieldIcon inputFieldEmail" />
             </label>
@@ -78,11 +78,12 @@ export default class UserForm extends Component {
                 value={password}
                 placeholder={t("form_password_placeholder")}
                 autocomplete={page.password}
-                required
                 oninput={this.handleInput}
+                required
               />
               <div className="inputFieldIcon inputFieldPassword" />
             </label>
+            {page.signup && <div style='margin-top: 10px; font-size:12px; color: #aaa;'>为了保障您的账号权益, 强烈建议您将密码设置为: 数字, 字母或特殊字符组合</div>}
           </div>
         )}
         <Button

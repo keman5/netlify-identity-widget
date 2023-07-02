@@ -174,6 +174,7 @@ class App extends Component {
 
     return providers.length ? (
       <Providers
+        page={page}
         providers={providers}
         labels={store.settings.external_labels || {}}
         onLogin={this.handleExternalLogin}
@@ -184,7 +185,7 @@ class App extends Component {
 
   render() {
     const { store } = this.props;
-    const showHeader = pagesWithHeader[store.modal.page];
+    // const showHeader = pagesWithHeader[store.modal.page];
     const showSignup = store.settings && !store.settings.disable_signup;
     const page = pages[store.modal.page] || {};
 
@@ -193,7 +194,7 @@ class App extends Component {
         <Modal
           page={page}
           error={store.error}
-          showHeader={showHeader}
+          showHeader={false}
           showSignup={showSignup}
           devSettings={!store.gotrue}
           loading={!store.error && store.gotrue && !store.settings}

@@ -43,10 +43,10 @@ export default class Modal extends Component {
     const formattedError = error ? formatError(error) : null;
     return (
       <div
-        className="modalContainer"
         role="dialog"
+        className="modalContainer"
         aria-hidden={`${hidden}`}
-        onClick={this.handleClose}
+        /* onClick={this.handleClose} */
       >
         <div
           className={`modalDialog${loading ? " visuallyHidden" : ""}`}
@@ -56,6 +56,9 @@ export default class Modal extends Component {
             <button onclick={this.handleClose} className="btn btnClose">
               <span className="visuallyHidden">Close</span>
             </button>
+            <h1 style="text-align: center; font-size: 20px; margin: 0 0 20px; color:#1E1E1E;">
+              {page.signup ? "注册" : "登录"} MacBee 账户
+            </h1>
             {showHeader && (
               <div className="header">
                 {showSignup && (

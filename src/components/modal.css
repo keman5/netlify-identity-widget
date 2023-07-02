@@ -394,7 +394,7 @@
 }
 
 .hr::before {
-  content: "or";
+  content: "或";
   position: relative;
   display: inline-block;
   font-size: 12px;

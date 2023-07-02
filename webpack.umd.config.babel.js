@@ -15,7 +15,7 @@ const umdConfig = Object.assign({}, baseConfig, {
     libraryTarget: "umd",
     libraryExport: "default"
   },
-  devtool: "source-map"
+  devtool: false,
 });
 
 umdConfig.plugins.splice(2, 1); // Remove html plugin
